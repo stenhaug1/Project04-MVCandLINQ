@@ -30,12 +30,12 @@ string typeinput = Console.ReadLine();
 
 var filteredDigimons = digimons.Where(a =>
 (string.IsNullOrEmpty(nameinput) || a.Name.Equals(nameinput, StringComparison.OrdinalIgnoreCase)) &&
-(string.IsNullOrEmpty(stageinput) || a.Stage.Equals(stageinput, StringComparison.OrdinalIgnoreCase))&&
-(string.IsNullOrEmpty(typeinput) || a.Type.Equals(typeinput,StringComparison.OrdinalIgnoreCase))
+(string.IsNullOrEmpty(stageinput) || a.Stage.Equals(stageinput, StringComparison.OrdinalIgnoreCase)) &&
+(string.IsNullOrEmpty(typeinput) || a.Type.Equals(typeinput, StringComparison.OrdinalIgnoreCase))
 ).ToList();
-foreach(var a in filteredDigimons)
+foreach (var a in filteredDigimons)
 {
     Console.WriteLine($"{a.Number} {a.Name} {a.Stage} {a.Type} ");
-    i2 ++;
+    i2++;
 }
 Console.WriteLine($" There were {i2} Digimons matching your criteria in the search");
