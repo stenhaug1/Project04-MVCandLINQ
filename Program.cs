@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-string[] line = File.ReadAllLines("DigiDB_digimonlist.csv");
+﻿string[] line = File.ReadAllLines("DigiDB_digimonlist.csv");
 int i2 = 0;
 
 List<Digimon> digimons = new List<Digimon>();
@@ -22,10 +20,10 @@ for (int i = 1; i < line.Length; i++)
 Console.WriteLine("Enter Digimon name or leave blank");
 string nameinput = Console.ReadLine();
 
-Console.WriteLine("Enter stage or leave blank");
+Console.WriteLine("Enter stage(free/training/etc) or leave blank");
 string stageinput = Console.ReadLine();
 
-Console.WriteLine("Enter the type of the Digimon or leave blank");
+Console.WriteLine("Enter the type of the Digimon(fire/wind/etc) or leave blank");
 string typeinput = Console.ReadLine();
 
 var filteredDigimons = digimons.Where(a =>
@@ -35,7 +33,7 @@ var filteredDigimons = digimons.Where(a =>
 ).ToList();
 foreach (var a in filteredDigimons)
 {
-    Console.WriteLine($"{a.Number} {a.Name} {a.Stage} {a.Type} ");
+    Console.WriteLine($"{a.Number} {a.Name} stage is currently {a.Stage} the type is {a.Type} ");
     i2++;
 }
 Console.WriteLine($" There were {i2} Digimons matching your criteria in the search");
